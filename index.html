@@ -91,7 +91,9 @@
   </style>
 </head>
 <body>
-
+ <div style="text-align: center; margin-bottom: 10px;">
+    <button type="button" onclick="toggleLanguage()">🌐 Change Language</button>
+  </div>
   <div class="aboutBox">
 	  <img src="https://raw.githubusercontent.com/ashikurrahman1223/ashikurrahmann1223.github.io/f16d842326e560f35101ecf65b6d39d5de972605/11.jpeg" alt="Logo" class="animatedBorder"></div>
   <form id="donorForm">
@@ -125,6 +127,35 @@
   </form>
 
   <script>
+	    let isBangla = false;
+
+    function toggleLanguage() {
+      isBangla = !isBangla;
+
+      if (isBangla) {
+        document.getElementById("formTitle").innerHTML = "🩸 রক্তদাতা এবং নতুন সদস্য 🩸 <br> নিবন্ধন ফর্ম";
+        document.getElementById("nameField").placeholder = "পুরো নাম";
+        document.getElementById("emailField").placeholder = "ইমেইল ঠিকানা";
+        document.getElementById("phoneField").placeholder = "ফোন নম্বর";
+        document.getElementById("nidField").placeholder = "এনআইডি / জন্ম সনদ নম্বর";
+        document.getElementById("eduField").placeholder = "শিক্ষাগত যোগ্যতা";
+        document.getElementById("bloodGroupField").options[0].text = "রক্তের গ্রুপ নির্বাচন করুন";
+        document.getElementById("locationField").placeholder = "আপনার এলাকা / জেলা";
+        document.getElementById("lastDonationLabel").innerHTML = "<strong>সর্বশেষ রক্তদানের তারিখ</strong>";
+        document.getElementById("healthField").placeholder = "আপনার ফেসবুক আইডি লিংক পেস্ট করুন";
+      } else {
+        document.getElementById("formTitle").innerHTML = "🩸 Blood Donor or New Member 🩸 <br> Registration Form";
+        document.getElementById("nameField").placeholder = "Full Name";
+        document.getElementById("emailField").placeholder = "Email Address";
+        document.getElementById("phoneField").placeholder = "Phone Number";
+        document.getElementById("nidField").placeholder = "NID/Birth Reg Number";
+        document.getElementById("eduField").placeholder = "Education Qualification";
+        document.getElementById("bloodGroupField").options[0].text = "Select Blood Group";
+        document.getElementById("locationField").placeholder = "Your Area / District";
+        document.getElementById("lastDonationLabel").innerHTML = "<strong>Last Donation Date</strong>";
+        document.getElementById("healthField").placeholder = "Paste your Facebook ID link";
+      }
+    }
     document.getElementById("donorForm").addEventListener("submit", function (e) {
       e.preventDefault();
       const form = this;
