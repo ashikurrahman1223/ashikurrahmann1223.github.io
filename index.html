@@ -91,21 +91,22 @@
   </style>
 </head>
 <body>
- <div style="text-align: center; margin-bottom: 10px;">
-    <button type="button" onclick="toggleLanguage()">🌐 Change Language</button>
-  </div>
+ 
   <div class="aboutBox">
 	  <img src="https://raw.githubusercontent.com/ashikurrahman1223/ashikurrahmann1223.github.io/f16d842326e560f35101ecf65b6d39d5de972605/11.jpeg" alt="Logo" class="animatedBorder"></div>
+	<div style="text-align: center; margin-bottom: 10px;">
+    <button type="button" onclick="toggleLanguage()">🌐 Change Language</button>
+  </div>
   <form id="donorForm">
-    <h2 align="center">🩸 Blood Donor or new Memeber🩸 <br> Registration form</h2>
+  <h2 align="center" id="formTitle">🩸 Blood Donor or New Member 🩸 <br> Registration Form</h2>
+    
+    <input type="text" name="name" id="nameField" placeholder="Full Name" required />
+    <input type="email" name="email" id="emailField" placeholder="Email Address" required />
+    <input type="tel" name="phone" id="phoneField" placeholder="Phone Number" required />
+    <input type="text" name="nam" id="nidField" placeholder="NID/Birth Reg Number" required />
+    <input type="text" name="naam" id="eduField" placeholder="Education Qualification" required />
 
-    <input type="text" name="name" placeholder="Full Name" required />
-    <input type="email" name="email" placeholder="Email Address" required />
-    <input type="tel" name="phone" placeholder="Phone Number" required />
-    <input type="text" name="nam" placeholder="NID/Birth Reg Number" required />
-    <input type="text" name="naam" placeholder="Education Qualification" required />
-
-    <select name="blood_group" required>
+    <select name="blood_group" id="bloodGroupField" required>
       <option value="">Select Blood Group</option>
       <option value="A+">A+</option>
       <option value="A-">A-</option>
@@ -117,10 +118,12 @@
       <option value="AB-">AB-</option>
     </select>
 
-    <input type="text" name="location" placeholder="Your Area / District" required />
-  <strong>Last Donation Date</strong>
-    <input type="date" name="last_donation" placeholder="Last Blood Donation Date" />
-    <textarea name="health" placeholder="Paste your facebook Id link:-"") rows="2"></textarea>
+    <input type="text" name="location" id="locationField" placeholder="Your Area / District" required />
+
+    <label id="lastDonationLabel"><strong>Last Donation Date</strong></label>
+    <input type="date" name="last_donation" id="lastDonationField" />
+
+    <textarea name="health" id="healthField" placeholder="Paste your Facebook ID link" rows="2"></textarea>
 
     <button type="submit">Register</button>
     <div class="status" id="status"></div>
